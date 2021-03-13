@@ -442,7 +442,7 @@ textarea {
 			<br><br>
 			<p class="policy">Privacy Policy</p>
 		</div>
-		<p class="copyright">COPYRIGHT ©️ 2020 HOMEY OH MY DESIGN + DEVELOPMENT BY BLOGZILLA STUDIO</p>
+		<p class="copyright">COPYRIGHT ©️ 2020 </p>
 	</footer>
 </body>
 </html>
