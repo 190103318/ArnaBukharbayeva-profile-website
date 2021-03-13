@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 
+use App\Http\Controllers\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +33,7 @@ Route::get('/contact', function () {
 
 Route::get('/post/create', function () {
     DB::table('post')->insert([
-    'title'=>'Future Technologies',
+    'title'=>'Technologies',
     'body'=>'Several technologies, such as 3D printing, nanotechnology, data analytics, blockchain, and AI, impact all six sectors.'
     ]);
  });
@@ -39,3 +41,10 @@ Route::get('/post/create', function () {
     $post= Post::find(1);
     return $post->body;
  });
+
+ Route::get('/blog/index',[BlogController::class,'index']);
+ Route::get('/blog/create', function () {
+    return view('blog/create');
+});
+ Route::post('/blog/create', [BlogController::class, 'store'])->name('add-blog');
+ Route::get('/blog/{id}', [BlogController::class, 'get_blog']);
