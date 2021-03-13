@@ -251,7 +251,7 @@ address{
 		<section class="second-block">
 		<div class="block-inner">
 			<div class="img-block">
-				<img id="imgid" src="https://github.com/190103318/ArnaBukharbayeva-profile-website/blob/main/lab3/resources/Arna.jpg?raw=true" alt="" width="400px" height="470px">
+				<img id="imgid" src="https://github.com/190103318/ArnaBukharbayeva-profile-website/blob/main/resources/Arna.jpg?raw=true" alt="" width="400px" height="470px">
 			</div>
 			<div class="soc-media">
 				<ul class="list-soc">

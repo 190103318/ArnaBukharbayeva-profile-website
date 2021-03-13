@@ -485,7 +485,7 @@ textarea {
 			<br><br>
 			<p class="policy">Privacy Policy</p>
 		</div>
-		<p class="copyright">COPYRIGHT ©️ 2020 </p>
+		<p class="copyright">COPYRIGHT ©️ 2020 php </p>
 	</footer>
 </body>
 </html>
