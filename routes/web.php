@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UploadFileController;
+use App\Mail\SendEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,9 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+// Route::get('/form', function () {
+//     return view('form');
+// })->name('form');
 
 
 Route::get('/post/create', function () {
@@ -48,3 +53,14 @@ Route::get('/post/create', function () {
 });
  Route::post('/blog/create', [BlogController::class, 'store'])->name('add-blog');
  Route::get('/blog/{id}', [BlogController::class, 'get_blog']);
+
+
+
+Route::get('/form', 'App\Http\Controllers\FormController@index');
+Route::post('/addform', 'App\Http\Controllers\FormController@store')->name('addform');
+
+Route::get('mail/send', 'App\Http\Controllers\MailController@send');
+
+// Route::get('mail/send', function () {
+//     return new SendEmail();
+// });
