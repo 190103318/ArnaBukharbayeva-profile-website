@@ -64,3 +64,9 @@ Route::get('mail/send', 'App\Http\Controllers\MailController@send');
 // Route::get('mail/send', function () {
 //     return new SendEmail();
 // });
+
+Route::get('/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('/main');
+});
+Route::get('/{lang}','App\Http\Controllers\LocalizationController@index' );

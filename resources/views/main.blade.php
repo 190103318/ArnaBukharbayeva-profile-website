@@ -4,9 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio </title>
-	<link href="{{ asset('css/main.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script> 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<style>
     
 *{
 	margin: 0;
@@ -76,7 +79,7 @@ img {
 	background-color:transparent; 
 }
 .hello{
-	width: 37%;
+	width: 33%;
 	margin-left: 40%;
 	font-family:  Merriweather, Georgia, serif; 
 	font-size: 21px; 
@@ -232,20 +235,21 @@ address{
 }
     </style>
 </head>
-<body>
-	<nav>
+<body style="font-family: 'Montserrat', sans-serif; background-color: #F2DE30;">
+	@extends('layout')
+	@section('content')
+	<nav style="margin-top: -24px;">
 		<ul>
-			<li><a href="{{ URL::route('main') }}">MAIN</a></li>
-			<li><a href="{{ URL::route('about') }}">ABOUT</a></li>
-			<li><a href="{{ URL::route('contact') }}">CONTACT</a></li>
+			<li><a  style="text-decoration: none;" href="{{ URL::route('main') }}">{{ __('lang.MAIN') }}</a></li>
+			<li><a  style="text-decoration: none;" href="{{ URL::route('about') }}">{{ __('lang.ABOUT') }}</a></li>
+			<li><a  style="text-decoration: none;" href="{{ URL::route('contact') }}">{{ __('lang.CONTACT') }}</a></li>
 		</ul>
 	</nav>
-	<hr>
-	<div class="nursery">
+	<div class="nursery" style="font-family: 'Montserrat', sans-serif; background-color: #F2DE30;">
 		<div class = "conteiner">
 			<div class="hello">
-			<p style="margin-left:20px;font-family: 'Open Sans', sans-serif; font-size: 10px; color: #424040;letter-spacing: 2px;">HELLO! I'M ARNA BUKHARBAYEVA</p>
-			<a href="{{ URL::route('about') }}"><div class="btn-join">LET'S START!</div></a></div>
+			<p style="margin-left:45px;font-family: 'Open Sans', sans-serif; font-size: 10px; color: #424040;letter-spacing: 2px;">{{ __('lang.HELLO! I AM ARNA BUKHARBAYEVA') }}</p>
+			<a style="text-decoration: none;" href="{{ URL::route('about') }}"><div class="btn-join">{{ __('lang.LETS START!') }}</div></a></div>
 			<br>
 		</div>
 		<section class="second-block">
@@ -279,5 +283,6 @@ address{
 		</div>
 		<p class="copyright">COPYRIGHT ©️ 2020 HOMEY OH MY DESIGN + DEVELOPMENT BY BLOGZILLA STUDIO</p>
 	</footer>
+	@endsection
 </body>
 </html>
