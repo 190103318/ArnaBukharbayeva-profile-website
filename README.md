@@ -10,5 +10,5 @@
 <img src="public/images/ph3.jpg">
 <p style="text-align: center">##Form:</p>
 <img src="public/images/ph4.jpg">
-<p style="text-align: center; color: red">##ERD diagram:</p>
+<h3 style="text-align: center; color: red">##ERD diagram:</h3>
 <img src="public/images/ph5.jpg">
