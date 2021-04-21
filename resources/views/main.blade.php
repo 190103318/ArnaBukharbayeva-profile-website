@@ -68,9 +68,11 @@ img {
 	width: 370px;
 	background-color: #424040;
 	padding: 10px;
+	box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.8);
 }
 #imgid{
-	padding: 10px;
+	padding: 0px;
+	box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.45);
 }
 .nursery{
 	display: inline-flex;
@@ -179,11 +181,13 @@ a{
 	color: #424040;
 	letter-spacing: 7px;
 	font-size: 12px;
+	text-shadow: 1px 1px #ff0000; background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )
 }
 .btn-join:hover, .btn-join:focus{
 	background-color: #424040;
 	color: #fff;
 	box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.45);
+
 }
 .form-footer{
 	width: 500px;
@@ -243,13 +247,14 @@ address{
 			<li><a  style="text-decoration: none;" href="{{ URL::route('main') }}">{{ __('lang.MAIN') }}</a></li>
 			<li><a  style="text-decoration: none;" href="{{ URL::route('about') }}">{{ __('lang.ABOUT') }}</a></li>
 			<li><a  style="text-decoration: none;" href="{{ URL::route('contact') }}">{{ __('lang.CONTACT') }}</a></li>
+			<li><a  style="text-decoration: none;" href="{{ URL::route('form') }}">{{ __('lang.FORM') }}</a></li>
 		</ul>
 	</nav>
-	<div class="nursery" style="font-family: 'Montserrat', sans-serif; background-color: #F2DE30;">
+	<div class="nursery" style="font-family: 'Montserrat', sans-serif; background-image: url(https://cdn.statically.io/img/lh4.googleusercontent.com/proxy/S-Ckg3T3vmLme0c2zhc9SlErG1PJNHu9l30TwJtP8_d6ETSHB9By1UvicgrEigawETkgDzIqx5Q1G0VdcRDCWjhqAbxfpfvBDoLLCBHvvzRD8SBMcxd76TPCGqsF2RVk63aAf8wpFUAZwDaL_VG29huTw4M6a_6lzFsV=s0-d);">
 		<div class = "conteiner">
 			<div class="hello">
-			<p style="margin-left:45px;font-family: 'Open Sans', sans-serif; font-size: 10px; color: #424040;letter-spacing: 2px;">{{ __('lang.HELLO! I AM ARNA BUKHARBAYEVA') }}</p>
-			<a style="text-decoration: none;" href="{{ URL::route('about') }}"><div class="btn-join">{{ __('lang.LETS START!') }}</div></a></div>
+			<p style="margin-left:5px;font-family: 'Open Sans', sans-serif;font:bold ; font-size: 13px; font-style: bold; color: #424040;letter-spacing: 2px;">{{ __('lang.HELLO! I AM ARNA BUKHARBAYEVA') }}</p>
+			<a style="text-decoration: none; " href="{{ URL::route('about') }}"><div class="btn-join" >{{ __('lang.LETS START!') }}</div></a></div>
 			<br>
 		</div>
 		<section class="second-block">

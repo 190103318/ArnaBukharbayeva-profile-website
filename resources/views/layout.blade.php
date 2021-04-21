@@ -2,13 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <title>Main page</title>
+    <title>Portfolio</title>
 </head>
 <body>
 <div id="app">
     <div style="background-color: #343a40;">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark container" >
-            <div class="collapse navbar-collapse" id="navbarToggler" >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+            <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
                     @php $locale = session()->get('locale'); @endphp
                     <li class="nav-item dropdown">
@@ -25,14 +25,14 @@
                                 <img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/250px-Flag_of_Russia.svg.png')}}"> Русский
                                 @break
                                 @default
-                                <img width="20" src="{{asset('https://pngicon.ru/file/uploads/flag-velikobritanii.png')}}"> English
+                                <img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/250px-Flag_of_Kazakhstan.svg.png')}}"> English
                             @endswitch
                             <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/en"><img width="20" src="{{asset('https://pngicon.ru/file/uploads/flag-velikobritanii.png')}}"> English</a><br>
-                            <a class="dropdown-item" href="/kz"><img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/250px-Flag_of_Kazakhstan.svg.png')}}"> Қазақ тілі</a><br>
-                            <a class="dropdown-item" href="/ru"><img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/250px-Flag_of_Russia.svg.png')}}"> Русский язык</a>
+                            <a class="dropdown-item" href="main/kz"><img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/250px-Flag_of_Kazakhstan.svg.png')}}"> Қазақ тілі</a><br>
+                            <a class="dropdown-item" href="main/en"><img width="20" src="{{asset('https://pngicon.ru/file/uploads/flag-velikobritanii.png')}}"> English</a><br>
+                            <a class="dropdown-item" href="main/ru"><img width="20" src="{{asset('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/250px-Flag_of_Russia.svg.png')}}"> Русский язык</a>
                            
                         </div>
                     </li>

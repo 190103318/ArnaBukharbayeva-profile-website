@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
-    protected $table = 'form';
-    protected $fillable = ['name','surname','email','image'];
+    protected $table = 'forms';
+    protected $fillable = ['name','surname','email'];
+
+    public function file(){
+        return $this->hasOne(File::class, 'form_id', 'id');
+    }
 }

@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
-
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UploadFileController;
 use App\Mail\SendEmail;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ Route::get('/post/create', function () {
 
 
 
-Route::get('/form', 'App\Http\Controllers\FormController@index');
+Route::get('/form', 'App\Http\Controllers\FormController@index')->name('form');
 Route::post('/addform', 'App\Http\Controllers\FormController@store')->name('addform');
 
 Route::get('mail/send', 'App\Http\Controllers\MailController@send');
@@ -65,8 +66,24 @@ Route::get('mail/send', 'App\Http\Controllers\MailController@send');
 //     return new SendEmail();
 // });
 
-Route::get('/{lang}', function ($lang) {
+Route::get('main/{lang}', function ($lang) {
     App::setlocale($lang);
     return view('/main');
 });
-Route::get('/{lang}','App\Http\Controllers\LocalizationController@index' );
+Route::get('main/{lang}','App\Http\Controllers\LocalizationController@index' );
+
+Route::get('/forms/all',[FormController::class,'get_form']);
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('login');
+});
+
+Route::post("/login",[UserController::class,'login']);
+
+Route::get('/sendemail', 'App\Http\Controllers\SendEmailController@index');
+Route::post('sendemail/send', 'App\Http\Controllers\SendEmailController@send');

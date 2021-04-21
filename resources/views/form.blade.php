@@ -6,7 +6,8 @@
     <title>Form</title>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <style>
+    
+	<style>
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -617,39 +618,46 @@ input.input100 {
 	bottom: 0px;
 }
     </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script> 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+@extends('layout')
+	@section('content')
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form action="{{ route('addform') }}" method="POST" enctype="multipart/form-data" class="login100-form validate-form">
 					{{ csrf_field() }}
 					<span class="login100-form-title p-b-34">
-						Fill the form
+					{{ __('lang.Fill the form') }}
 					</span>
 					
 					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
-						<input id="first-name" class="input100" type="text" name="name" placeholder="Name">
+						<input id="first-name" class="input100" type="text" name="name" placeholder="{{ __('lang.Name') }}">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" >
-						<input class="input100" type="text" name="surname" placeholder="Surname">
+						<input class="input100" type="text" name="surname" placeholder="{{ __('lang.Surname') }}">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="{{ __('lang.Email') }}">
 						<span class="focus-input100"></span>
 					</div>
 					<div class="input-group">
 						<div class = "custom-file">
-							<input class="custom_file_input" type="file" name="image" style = "padding-bottom: 25px; color: grey">
-							<label class="custom_file_label">Choose a file</label>
+							<label style = "margin-top: -16px; margin-left: 25px" class="custom_file_label">{{ __('lang.Choose a file') }}</label>
+							<input class="custom_file_input" type="file" name="file" style = "padding-bottom: 25px; color: grey">
 						</div>
 					</div>
 					
 					<div class="container-login100-form-btn">
 						<button type="submit" name="submit" class="login100-form-btn fork">
-							Save
+						{{ __('lang.Save') }}
 						</button>
 					</div>
 				</form>
@@ -658,5 +666,6 @@ input.input100 {
             </div>
 		</div>
 	</div>	
+	@endsection
 </body>
 </html>
